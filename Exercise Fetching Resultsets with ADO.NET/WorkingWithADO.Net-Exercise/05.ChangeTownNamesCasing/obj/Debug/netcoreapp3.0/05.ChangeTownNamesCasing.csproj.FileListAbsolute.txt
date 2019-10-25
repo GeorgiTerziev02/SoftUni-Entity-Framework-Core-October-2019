@@ -1,0 +1,13 @@
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.exe
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\System.Data.SqlClient.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\runtimes\win-arm64\native\sni.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\runtimes\win-x64\native\sni.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\runtimes\win-x86\native\sni.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.csproj.CopyComplete
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.dll
+D:\softuni\Entity Framework Core\Exercise Fetching Resultsets with ADO.NET\WorkingWithADO.Net-Exercise\05.ChangeTownNamesCasing\obj\Debug\netcoreapp3.0\05.ChangeTownNamesCasing.pdb
