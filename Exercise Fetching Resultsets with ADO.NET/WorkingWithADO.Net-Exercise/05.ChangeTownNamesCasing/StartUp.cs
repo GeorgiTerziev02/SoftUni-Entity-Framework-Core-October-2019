@@ -45,14 +45,6 @@ namespace _05.ChangeTownNamesCasing
                 command.Parameters.AddWithValue("@countryName", country);
                 int affectedRows = command.ExecuteNonQuery();
 
-                if (affectedRows == 0)
-                {
-                    Console.WriteLine("No town names were affected.");
-                    return;
-                }
-
-                Console.WriteLine($"{affectedRows} town names were affected.");
-
                 queryText = @" SELECT t.Name 
                                  FROM Towns as t
                                  JOIN Countries AS c ON c.Id = t.CountryCode
@@ -73,7 +65,7 @@ namespace _05.ChangeTownNamesCasing
 
                 List<string> changedTowns = new List<string>();
 
-                for (int i = 0; i < townsBeforeChange.Count - 1; i++)
+                for (int i = 0; i <= townsBeforeChange.Count - 1; i++)
                 {
                     if (townsBeforeChange[i] != townsAfterChange[i])
                     {
@@ -81,6 +73,14 @@ namespace _05.ChangeTownNamesCasing
                     }
                 }
 
+
+                if (changedTowns.Count == 0 || affectedRows == 0)
+                {
+                    Console.WriteLine("No town names were affected.");
+                    return;
+                }
+
+                Console.WriteLine($"{affectedRows} town names were affected.");
                 Console.WriteLine("["+string.Join(", ", changedTowns) +"]");
             }
         }
