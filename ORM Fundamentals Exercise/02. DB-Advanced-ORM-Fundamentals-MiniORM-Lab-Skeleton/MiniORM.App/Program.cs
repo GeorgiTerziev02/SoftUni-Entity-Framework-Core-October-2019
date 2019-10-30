@@ -2,7 +2,6 @@
 {
     using MiniORM.App.Data;
     using MiniORM.App.Data.Entities;
-    using System;
     using System.Linq;
 
     public class Program
