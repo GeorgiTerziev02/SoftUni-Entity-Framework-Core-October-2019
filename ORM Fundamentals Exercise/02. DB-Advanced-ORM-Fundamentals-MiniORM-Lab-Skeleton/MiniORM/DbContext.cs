@@ -4,6 +4,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.SqlClient;
     using System.Linq;
     using System.Reflection;
@@ -81,12 +82,12 @@
                         {
                             throw tie.InnerException;
                         }
-                        catch (InvalidOperationException ioe)
+                        catch (InvalidOperationException)
                         {
                             transaction.Rollback();
                             throw;
                         }
-                        catch (SqlException se)
+                        catch (SqlException)
                         {
                             transaction.Rollback();
                             throw;
@@ -196,7 +197,7 @@
             }
         }
 
-        private void MapCollection<TDbSet, TCollection>(DbSet<TDbSet> db, PropertyInfo collectionProperty)
+        private void MapCollection<TDbSet, TCollection>(DbSet<TDbSet> dbSet, PropertyInfo collectionProperty)
             where TDbSet : class, new() 
             where TCollection : class, new()
         {
@@ -208,6 +209,129 @@
                 .Where(pi => pi.HasAttribute<KeyAttribute>())
                 .ToArray();
 
+            PropertyInfo primaryKey = primaryKeys.First();
+
+            var foreignKey = entityType
+                .GetProperties()
+                .First(pi => pi.HasAttribute<ForeignKeyAttribute>());
+
+            bool isManyToMany = primaryKeys.Length >= 2;
+
+            if (isManyToMany)
+            {
+                primaryKey = collectionType
+                    .GetProperties()
+                    .First(pi => collectionType.GetProperty(pi.GetCustomAttribute<ForeignKeyAttribute>().Name)
+                    .PropertyType == entityType);
+            }
+
+            DbSet<TCollection> navigationDbSet = (DbSet<TCollection>)this.dbSetProperties[collectionType].GetValue(this);
+
+            foreach (var entity in dbSet)
+            {
+                object primaryKeyValue = foreignKey.GetValue(entity);
+
+                var navigationEntities = navigationDbSet
+                    .Where(ne => primaryKey.GetValue(ne).Equals(primaryKeyValue))
+                    .ToArray();
+
+                ReflectionHelper.ReplaceBackingField(entity, collectionProperty.Name, navigationEntities);
+            }
+        }
+
+        private void MapNavigationProperties<TEntity>(DbSet<TEntity> dbSet)
+            where TEntity : class, new()
+        {
+            Type entityType = typeof(TEntity);
+
+            PropertyInfo[] foreignKeys = entityType
+                .GetProperties()
+                .Where(pi => pi.HasAttribute<ForeignKeyAttribute>())
+                .ToArray();
+
+            foreach (var foreignKey in foreignKeys)
+            {
+                string navigationPropertyName = foreignKey
+                    .GetCustomAttribute<ForeignKeyAttribute>().Name;
+
+                var navigationProperty = entityType.GetProperty(navigationPropertyName);
+                var navigationDbSet = this.dbSetProperties[navigationProperty.PropertyType].GetValue(this);
+
+                var navigationPrimaryKey = navigationProperty
+                    .PropertyType.GetProperties()
+                    .First(pi => pi.HasAttribute<KeyAttribute>());
+
+                foreach (var entity in dbSet)
+                {
+                    var foreignKeyValue = foreignKey.GetValue(entity);
+
+                    var navigationPropertyValue = ((IEnumerable<object>) navigationDbSet)
+                    .First(currentNavigationProperty =>
+                                                   navigationPrimaryKey.GetValue(currentNavigationProperty).Equals(foreignKeyValue));
+
+                    navigationProperty.SetValue(entity, navigationPropertyValue);
+                }
+            }
+        }
+
+        private static bool IsObjectValid(object e)
+        {
+            var validationContext = new ValidationContext(e);
+            var validationResults = new List<ValidationResult>();
+
+            return Validator.TryValidateObject(e, validationContext, validationResults, true);
+        }
+
+        private IEnumerable<TEntity> LoadTableEntities<TEntity>()
+            where TEntity : class
+        {
+            var table = typeof(TEntity);
+
+            var columns = GetEntityColumnNames(table);
+            
+            var tableName = GetTableName(table);
+
+            var fetchedRows = this.connection.FetchResultSet<TEntity>(tableName, columns).ToArray();
+
+            return fetchedRows;
+        }
+
+        private string GetTableName(Type tableType)
+        {
+            string tableName = ((TableAttribute)Attribute.GetCustomAttribute(tableType, typeof(TableAttribute)))?.Name;
+
+            if (tableName == null)
+            {
+                tableName = this.dbSetProperties[tableType].Name;
+            }
+
+            return tableName;
+        }
+
+        private Dictionary<Type, PropertyInfo> DiscoverDbSets()
+        {
+            var dbSets = this.GetType().GetProperties()
+                .Where(pi => pi.PropertyType.GetGenericTypeDefinition() == typeof(DbSet<>))
+                .ToDictionary(pi => pi.PropertyType.GetGenericArguments().First(), pi => pi);
+
+            return dbSets;
+        }
+
+        private string[] GetEntityColumnNames(Type table)
+        {
+            string tableName = GetTableName(table);
+            IEnumerable<string> dbColumns = this.connection
+                .FetchColumnNames(tableName);
+
+            string[] columns = table
+                .GetProperties()
+                .Where(pi => dbColumns.Contains(pi.Name) &&
+                            !pi.HasAttribute<NotMappedAttribute>() &&
+                            AllowedSqlTypes.Contains(pi.PropertyType))
+                .Select(pi => pi.Name)
+                .ToArray();
+
+            return columns;
         }
     }
 }
