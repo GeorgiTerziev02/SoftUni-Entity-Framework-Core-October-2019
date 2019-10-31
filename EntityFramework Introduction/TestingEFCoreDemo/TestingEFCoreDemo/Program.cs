@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using TestingEFCoreDemo.Data;
+using TestingEFCoreDemo.Results;
 
 namespace TestingEFCoreDemo
 {
@@ -10,9 +12,28 @@ namespace TestingEFCoreDemo
         {
             using (var db =new SoftUniContext())
             {
-                var towns = db.Towns.ToList();
+                var towns = db.Towns
+                    .Include(t => t.Addresses)
+                    .ToList();
 
-                Console.WriteLine(towns.Count);
+                foreach (var town in towns)
+                {
+                    Console.WriteLine(town.Name);
+
+                    foreach (var address in town.Addresses)
+                    {
+                        Console.WriteLine($"------{address.AddressText}");
+                    }
+                }
+
+                var result = db.Towns
+                    .Where(t => t.Name.StartsWith("A"))
+                    .Select(t=> new TownResultModel
+                    {
+                        Name = t.Name,
+                        Address = t.Addresses.Select(a => a.AddressText)
+                    })
+                    .ToList();
             }
         }
     }
