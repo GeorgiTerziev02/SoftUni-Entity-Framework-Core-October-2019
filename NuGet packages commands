@@ -1,0 +1,8 @@
+Install-Package Microsoft.EntityFrameworkCore.Tools –v 2.2.0
+Install-Package Microsoft.EntityFrameworkCore.SqlServer –v 2.2.0
+Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design
+
+Scaffold-DbContext -Connection "Server=.;Database=SoftUni;Integrated Security=True;" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data/Models
+
+Uninstall-Package Microsoft.EntityFrameworkCore.Tools -r
+Uninstall-Package Microsoft.EntityFrameworkCore.SqlServer.Design -RemoveDependencies
