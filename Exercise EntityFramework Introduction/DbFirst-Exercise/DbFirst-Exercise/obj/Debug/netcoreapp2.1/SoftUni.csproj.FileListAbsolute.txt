@@ -1,0 +1,10 @@
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\bin\Debug\netcoreapp2.1\SoftUni.deps.json
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\bin\Debug\netcoreapp2.1\SoftUni.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\bin\Debug\netcoreapp2.1\SoftUni.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\bin\Debug\netcoreapp2.1\SoftUni.dll
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\bin\Debug\netcoreapp2.1\SoftUni.pdb
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\obj\Debug\netcoreapp2.1\SoftUni.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\obj\Debug\netcoreapp2.1\SoftUni.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\obj\Debug\netcoreapp2.1\SoftUni.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\obj\Debug\netcoreapp2.1\SoftUni.dll
+D:\softuni\Entity Framework Core\Exercise EntityFramework Introduction\DbFirst-Exercise\DbFirst-Exercise\obj\Debug\netcoreapp2.1\SoftUni.pdb
