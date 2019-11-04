@@ -1,0 +1,4 @@
+D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\bin\Debug\netcoreapp3.0\EFCodeFirstTest.exe
+D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.AssemblyInfo.cs
