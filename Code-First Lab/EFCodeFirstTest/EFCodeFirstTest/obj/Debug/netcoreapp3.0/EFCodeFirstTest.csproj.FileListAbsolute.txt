@@ -39,3 +39,4 @@ D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\
 D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.csproj.CopyComplete
 D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.dll
 D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\obj\Debug\netcoreapp3.0\EFCodeFirstTest.pdb
+D:\softuni\Entity Framework Core\Code-First Lab\EFCodeFirstTest\EFCodeFirstTest\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
