@@ -1,0 +1,4 @@
+D:\softuni\Entity Framework Core\Exercise Code-First\P03_SalesDatabase\P03_SalesDatabase\bin\Debug\netcoreapp3.0\P03_SalesDatabase.exe
+D:\softuni\Entity Framework Core\Exercise Code-First\P03_SalesDatabase\P03_SalesDatabase\obj\Debug\netcoreapp3.0\P03_SalesDatabase.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise Code-First\P03_SalesDatabase\P03_SalesDatabase\obj\Debug\netcoreapp3.0\P03_SalesDatabase.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise Code-First\P03_SalesDatabase\P03_SalesDatabase\obj\Debug\netcoreapp3.0\P03_SalesDatabase.AssemblyInfo.cs
