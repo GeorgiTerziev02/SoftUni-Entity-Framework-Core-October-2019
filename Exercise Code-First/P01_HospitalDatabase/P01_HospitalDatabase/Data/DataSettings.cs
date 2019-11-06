@@ -6,6 +6,6 @@ namespace P01_HospitalDatabase.Data
 {
     public static class DataSettings
     {
-        public const string DefaultConnection = "Server=.\\SQLEXPRESS;Database=StudentSystemCodeFirst;Integrated Security=true";
+        public const string DefaultConnection = "Server=.\\SQLEXPRESS;Database=HospitalDatabase;Integrated Security=true";
     }
 }
