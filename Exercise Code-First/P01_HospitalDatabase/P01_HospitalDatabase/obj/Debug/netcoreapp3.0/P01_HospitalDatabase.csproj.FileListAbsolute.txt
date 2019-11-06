@@ -1,0 +1,4 @@
+D:\softuni\Entity Framework Core\Exercise Code-First\P01_HospitalDatabase\P01_HospitalDatabase\bin\Debug\netcoreapp3.0\P01_HospitalDatabase.exe
+D:\softuni\Entity Framework Core\Exercise Code-First\P01_HospitalDatabase\P01_HospitalDatabase\obj\Debug\netcoreapp3.0\P01_HospitalDatabase.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise Code-First\P01_HospitalDatabase\P01_HospitalDatabase\obj\Debug\netcoreapp3.0\P01_HospitalDatabase.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise Code-First\P01_HospitalDatabase\P01_HospitalDatabase\obj\Debug\netcoreapp3.0\P01_HospitalDatabase.AssemblyInfo.cs
