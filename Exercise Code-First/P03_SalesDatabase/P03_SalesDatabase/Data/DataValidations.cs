@@ -11,5 +11,11 @@
         {
             public const int StoreNameMaxLength = 80;
         }
+
+        public static class Customer
+        {
+            public const int CustomerNameMaxLength = 100;
+            public const int EmailMaxLength = 80;
+        }
     }
 }

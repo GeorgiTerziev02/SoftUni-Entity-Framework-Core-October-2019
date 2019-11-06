@@ -2,15 +2,15 @@
 {
     using System.Collections.Generic;
 
-    public class Product
+    public class Customer
     {
-        public int ProductId { get; set; }
+        public int CustomerId { get; set; }
 
         public string Name { get; set; }
-        //TODO: REAL NUMBER
-        public double Quantity { get; set; }
 
-        public decimal Price { get; set; }
+        public string Email { get; set; }
+
+        public string CreditCardNumber { get; set; }
 
         public ICollection<Sale> Sales { get; set; }
     }
