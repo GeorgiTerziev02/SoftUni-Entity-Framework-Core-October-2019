@@ -5,6 +5,8 @@
         public static class Product
         {
             public const int ProductNameMaxLength = 50;
+            public const int DescriptionMaxLength = 250;
+            public const string DescriptionDefaultValue = "No description";
         }
 
         public static class Store

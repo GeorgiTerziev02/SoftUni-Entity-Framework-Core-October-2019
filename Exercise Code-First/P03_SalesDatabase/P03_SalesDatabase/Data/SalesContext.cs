@@ -1,10 +1,19 @@
 ﻿namespace P03_SalesDatabase.Data
 {
+    using JetBrains.Annotations;
     using Microsoft.EntityFrameworkCore;
     using P03_SalesDatabase.Data.Models;
 
     public class SalesContext : DbContext
     {
+        public SalesContext()
+        {
+        }
+        public SalesContext(DbContextOptions options) 
+            : base(options)
+        {
+        }
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Store> Stores { get; set; }
@@ -43,6 +52,13 @@
                 .Entity<Product>()
                 .Property("Quantity")
                 .IsRequired(true);
+
+            modelBuilder
+                .Entity<Product>()
+                .Property("Description")
+                .IsRequired(true)
+                .HasMaxLength(DataValidations.Product.ProductNameMaxLength)
+                .HasDefaultValue(DataValidations.Product.DescriptionDefaultValue);
 
             modelBuilder
                 .Entity<Store>()
@@ -101,6 +117,11 @@
                 .Entity<Sale>()
                 .Property("Date")
                 .IsRequired(true);
+
+            modelBuilder
+                .Entity<Sale>()
+                .Property("Date")
+                .HasDefaultValueSql("GETDATE()");
 
             modelBuilder
                 .Entity<Sale>()
