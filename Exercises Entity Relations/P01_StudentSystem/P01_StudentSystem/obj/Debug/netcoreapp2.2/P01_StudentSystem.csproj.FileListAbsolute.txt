@@ -1,0 +1,9 @@
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\bin\Debug\netcoreapp2.2\P01_StudentSystem.deps.json
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\bin\Debug\netcoreapp2.2\P01_StudentSystem.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\bin\Debug\netcoreapp2.2\P01_StudentSystem.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\bin\Debug\netcoreapp2.2\P01_StudentSystem.dll
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\bin\Debug\netcoreapp2.2\P01_StudentSystem.pdb
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\obj\Debug\netcoreapp2.2\P01_StudentSystem.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\obj\Debug\netcoreapp2.2\P01_StudentSystem.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\obj\Debug\netcoreapp2.2\P01_StudentSystem.dll
+D:\softuni\Entity Framework Core\Exercises Entity Relations\P01_StudentSystem\P01_StudentSystem\obj\Debug\netcoreapp2.2\P01_StudentSystem.pdb
