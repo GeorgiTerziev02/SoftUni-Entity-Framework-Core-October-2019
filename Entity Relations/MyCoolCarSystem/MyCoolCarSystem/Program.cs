@@ -4,10 +4,12 @@
     using MyCoolCarSystem.Data;
     using MyCoolCarSystem.Data.Models;
     using MyCoolCarSystem.Results;
+    using Data.Queries;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
+    using Z.EntityFramework.Plus;
 
     public class Program
     {
@@ -17,44 +19,10 @@
 
             db.Database.Migrate();
 
-            var result = db.Purchases
-                .Select(p => new PurchaseResultModel
-                {
-                    Price = p.Price,
-                    PurchaseDate = p.PurchaseDate,
-                    Customer = new CustomerResultModel
-                    {
-                        Name = p.Customer.FirstName + " " + p.Customer.LastName,
-                        Town = p.Customer.Address.Town
-                    },
-
-                    Car = new CarResultModel
-                    {
-                        Make = p.Car.Model.Make.Name,
-                        Model = p.Car.Model.Name,
-                        Vin = p.Car.Vin
-                    }
-                })
-                .ToList();
-
-            var make = db.Makes.FirstOrDefault(m=>m.Name=="Mercedes");
-
-            var model = new Model
-            {
-                Modification = "500",
-                Name = "CL",
-                Year = 3000
-            };
-
-            var validationContext = new ValidationContext(model);
-            var validationResults = new List<ValidationResult>();
-
-            Validator.TryValidateObject(model, validationContext, validationResults, true);
-            Validator.ValidateObject(model, validationContext, true);
-
-            make.Models.Add(model);
-
-            db.SaveChanges();
+            object update = db
+                .Cars
+                .Where(c=>c.Price<20000)
+                .Update(c => new Car { Price = c.Price * 1.2m});
         }
     }
 }
