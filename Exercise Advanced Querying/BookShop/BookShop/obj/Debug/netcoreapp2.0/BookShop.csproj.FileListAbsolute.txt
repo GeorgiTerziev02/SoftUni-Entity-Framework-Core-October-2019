@@ -1,0 +1,17 @@
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.deps.json
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.dll
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.pdb
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Data.dll
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Initializer.dll
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Models.dll
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Data.pdb
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Initializer.pdb
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\bin\Debug\netcoreapp2.0\BookShop.Models.pdb
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.csproj.CopyComplete
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.dll
+D:\softuni\Entity Framework Core\Exercise Advanced Querying\BookShop\BookShop\obj\Debug\netcoreapp2.0\BookShop.pdb
