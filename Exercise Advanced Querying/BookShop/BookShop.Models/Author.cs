@@ -1,5 +1,6 @@
 ﻿namespace BookShop.Models
 {
+    using Newtonsoft.Json;
     using System.Collections.Generic;
 
     public class Author
@@ -15,6 +16,7 @@
 
         public string LastName { get; set; }
 
+        [JsonIgnore]
         public ICollection<Book> Books { get; set; }
     }
 }

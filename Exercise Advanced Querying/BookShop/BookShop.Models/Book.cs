@@ -1,9 +1,10 @@
-﻿using BookShop.Models.Enums;
-
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using BookShop.Models.Enums;
+
 
     public class Book
     {
@@ -31,6 +32,7 @@ namespace BookShop.Models
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
+        [JsonIgnore]
         public ICollection<BookCategory> BookCategories { get; set; }
     }
 }

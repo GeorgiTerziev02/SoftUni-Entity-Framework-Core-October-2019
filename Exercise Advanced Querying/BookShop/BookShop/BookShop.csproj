@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Collection" Version="4.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookShop.Data\BookShop.Data.csproj" />
     <ProjectReference Include="..\BookShop.Initializer\BookShop.Initializer.csproj" />
     <ProjectReference Include="..\BookShop.Models\BookShop.Models.csproj" />

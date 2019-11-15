@@ -4,21 +4,47 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-
+    using BookShop.Data.ViewModels;
     using Data;
     using Microsoft.EntityFrameworkCore;
+
+    using Newtonsoft.Json;
+    using AutoMapper;
+    using BookShop.Models;
 
     public class StartUp
     {
         public static void Main()
         {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Book, BookDTO>()
+                    .ForMember(dest=>dest.Name, opt=>
+                        opt.MapFrom(src=>src.Title));
+            });
+
             using (var db = new BookShopContext())
             {
-                //int input = int.Parse(Console.ReadLine());
+                var book = db
+                    .Books
+                    .Include(b=>b.Author)
+                    .First();
 
-                //var result = GetMostRecentBooks(db);
+                var bookDto = Mapper.Map<BookDTO>(book);
 
-                //Console.WriteLine(result);
+                //var bookDto = new BookDTO()
+                //{ 
+                //    Name = "Title",
+                //    Price = 10m
+                //};
+
+                //var book = Mapper.Map<Book>(bookDto);
+
+
+                string result = JsonConvert.SerializeObject(bookDto, Formatting.Indented);
+
+                Console.WriteLine(result);
+
             }
         }
 
