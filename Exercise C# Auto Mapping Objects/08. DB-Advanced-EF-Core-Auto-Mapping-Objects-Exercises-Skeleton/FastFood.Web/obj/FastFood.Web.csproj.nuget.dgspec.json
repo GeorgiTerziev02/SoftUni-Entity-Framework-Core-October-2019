@@ -1,0 +1,219 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Web\\FastFood.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\FastFood.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\FastFood.Data.csproj",
+        "projectName": "FastFood.Data",
+        "projectPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\FastFood.Data.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\FastFood.Models.csproj": {
+                "projectPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\FastFood.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\FastFood.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\FastFood.Models.csproj",
+        "projectName": "FastFood.Models",
+        "projectPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\FastFood.Models.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Web\\FastFood.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Web\\FastFood.Web.csproj",
+        "projectName": "FastFood.Web",
+        "projectPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Web\\FastFood.Web.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\FastFood.Data.csproj": {
+                "projectPath": "D:\\softuni\\Entity Framework Core\\Exercise C# Auto Mapping Objects\\08. DB-Advanced-EF-Core-Auto-Mapping-Objects-Exercises-Skeleton\\FastFood.Data\\FastFood.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
