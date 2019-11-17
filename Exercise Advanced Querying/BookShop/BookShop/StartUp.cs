@@ -10,6 +10,9 @@
 
     using Newtonsoft.Json;
     using AutoMapper;
+    using AutoMapper.Collection;
+    using AutoMapper.QueryableExtensions;
+    using AutoMapper.EquivalencyExpression;
     using BookShop.Models;
 
     public class StartUp
@@ -18,32 +21,80 @@
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Book, BookDTO>()
-                    .ForMember(dest=>dest.Name, opt=>
-                        opt.MapFrom(src=>src.Title));
+                cfg.AddCollectionMappers();
+                cfg.CreateMap<Book, BookDTO>();
+                cfg.CreateMap<BookDTO, Book>()
+                    .EqualityComparison((dto, o) => dto.BookId == o.BookId);
             });
 
             using (var db = new BookShopContext())
             {
-                var book = db
-                    .Books
-                    .Include(b=>b.Author)
-                    .First();
+                //var book = db
+                //    .Books
+                //    .Include(b => b.Author)
+                //    .First();
 
-                var bookDto = Mapper.Map<BookDTO>(book);
+                //var bookDto = Mapper.Map<BookDTO>(book);
 
                 //var bookDto = new BookDTO()
-                //{ 
+                //{
                 //    Name = "Title",
-                //    Price = 10m
+                //    Price = 10m,
+                //    AuthorFirstName = "ooo",
+                //    AuthorLastName = "ppppp"
                 //};
 
                 //var book = Mapper.Map<Book>(bookDto);
 
+                //var books = db
+                //    .Books
+                //    .Where(b => b.EditionType.ToString() == "Gold")
+                //    .ProjectTo<BookDTO>()
+                //    .ToList();
 
-                string result = JsonConvert.SerializeObject(bookDto, Formatting.Indented);
+                var books = new List<Book>()
+                {
+                    new Book()
+                    {
+                        BookId = 1,
+                        Title = "Title1",
+                        Price = 30
+                    },
 
+                    new Book()
+                    {
+                        BookId = 3,
+                        Title = "Title3",
+                        Price = 10
+                    }
+                };
+
+                var bookDtos = new List<BookDTO>()
+                {
+                    new BookDTO()
+                    {
+                        BookId = 1,
+                        Title = "Title1",
+                        Price = 15
+                    },
+                    new BookDTO()
+                    {
+                        BookId = 2,
+                        Title = "Title2",
+                        Price = 15
+                    }
+                };
+
+                Mapper.Map<List<BookDTO>, List<Book>>(bookDtos, books);
+
+                string result = JsonConvert.SerializeObject(books, Formatting.Indented);
+
+                string result2 = JsonConvert.SerializeObject(bookDtos, Formatting.Indented);
+                //Console.WriteLine(JsonConvert.SerializeObject(book, Formatting.Indented));
+                //Console.WriteLine();
                 Console.WriteLine(result);
+                Console.WriteLine();
+                Console.WriteLine(result2);
 
             }
         }
