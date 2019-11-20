@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ProductShop.Data;
+using ProductShop.Dto;
 using ProductShop.Models;
 
 namespace ProductShop
@@ -13,11 +16,13 @@ namespace ProductShop
     {
         public static void Main(string[] args)
         {
+            Mapper.Initialize(cfg => cfg.AddProfile<ProductShopProfile>());
+
             using (var db = new ProductShopContext())
             {
                 //var inputJson = File.ReadAllText("./../../../Datasets/categories-products.json");
 
-                var result = GetCategoriesByProductsCount(db);
+                var result = GetUsersWithProducts(db);
 
                 Console.WriteLine(result);
             }
@@ -134,23 +139,95 @@ namespace ProductShop
         }
 
         //Problem 07
-        //public static string GetCategoriesByProductsCount(ProductShopContext context)
-        //{
-        //    var categories = context
-        //        .Categories
-        //        .OrderByDescending(c => c.CategoryProducts.Count())
-        //        .Select(c => new
-        //        {
-        //            c.Name,
-        //            ProductsCount = c.CategoryProducts.Count(),
-        //            AveragePrice = c.CategoryProducts.Average(cp => cp.Product.Price).ToString("f2"),
-        //            TotalRevenue = c.CategoryProducts.Sum(cp => cp.Product.Price).ToString("f2")
-        //        })
-        //        .ToList();
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
+        {
+            var categories = context
+                .Categories
+                .OrderByDescending(c => c.CategoryProducts.Count())
+                //.Where(c => c.Name != null)
+                .Select(c => new
+                {
+                    Category = c.Name,
+                    ProductsCount = c.CategoryProducts.Count(),
+                    AveragePrice = c.CategoryProducts.Average(cp => cp.Product.Price).ToString("f2"),
+                    TotalRevenue = c.CategoryProducts.Sum(cp => cp.Product.Price).ToString("f2")
+                })
+                .ToList();
 
-        //    var json = JsonConvert.SerializeObject(categories);
+            var resolver = new DefaultContractResolver()
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
 
-        //    return json;
-        //}
+
+            var json = JsonConvert.SerializeObject(categories, new JsonSerializerSettings
+            {
+                ContractResolver = resolver,
+                Formatting = Formatting.Indented
+            });
+
+
+            return json;
+        }
+
+        //Problem 08
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+            //var usersWithProducts = context
+            //    .Users
+            //    .Where(u => u.ProductsSold.Where(ps => ps.Buyer != null).Count() >= 1)
+            //    .OrderByDescending(u => u.ProductsSold.Where(ps => ps.Buyer != null).Count())
+            //    .Select(u => new
+            //    {
+            //        u.FirstName,
+            //        u.LastName,
+            //        u.Age,
+            //        SoldProducts = new 
+            //        { 
+            //            Count = u.ProductsSold.Where(ps => ps.Buyer != null).Count(),
+            //            Products = u.ProductsSold
+            //                    .Where(ps => ps.Buyer != null)
+            //                    .Select(ps => new
+            //                    {
+            //                        ps.Name,
+            //                        ps.Price
+            //                    }).ToList()
+            //        }
+            //    })
+            //    .ToList();
+            
+            //var usersOuput = new
+            //{
+            //    UsersCount = usersWithProducts.Count,
+            //    Users = usersWithProducts
+            //};
+
+            var users = context
+                .Users
+                .Where(u => u.ProductsSold.Any(ps => ps.Buyer != null))
+                .ProjectTo<UserDetailsDto>()
+                .OrderByDescending(u => u.SoldProducts.Count)
+                .ToArray();
+
+            var usersOuput = new UserInfoDto()
+            {
+                UsersCount = users.Length,
+                Users = users
+            };
+
+            var resolver = new DefaultContractResolver()
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
+
+            var export = JsonConvert.SerializeObject(usersOuput, new JsonSerializerSettings
+            {
+                ContractResolver = resolver,
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Ignore
+            });
+
+            return export;
+        }
     }
 }
