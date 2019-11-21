@@ -1,0 +1,12 @@
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.exe
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.deps.json
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.runtimeconfig.json
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.dll
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\XMLDemo.pdb
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\obj\Debug\netcoreapp3.0\XMLDemo.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\obj\Debug\netcoreapp3.0\XMLDemo.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\obj\Debug\netcoreapp3.0\XMLDemo.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\obj\Debug\netcoreapp3.0\XMLDemo.dll
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\obj\Debug\netcoreapp3.0\XMLDemo.pdb
+D:\softuni\Entity Framework Core\XML Processing Lab 2\XMLDemo\XMLDemo\bin\Debug\netcoreapp3.0\Data\cars.xml
