@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\softuni\\Entity Framework Core\\XML Processing Lab 2\\XMLDemo\\XMLDemo\\XMLDemo.csproj",
+      "projectUniqueName": "D:\\softuni\\Entity Framework Core\\XML Processing Lab\\XMLDemo\\XMLDemo\\XMLDemo.csproj",
       "projectName": "XMLDemo",
-      "projectPath": "D:\\softuni\\Entity Framework Core\\XML Processing Lab 2\\XMLDemo\\XMLDemo\\XMLDemo.csproj",
+      "projectPath": "D:\\softuni\\Entity Framework Core\\XML Processing Lab\\XMLDemo\\XMLDemo\\XMLDemo.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\softuni\\Entity Framework Core\\XML Processing Lab 2\\XMLDemo\\XMLDemo\\obj\\",
+      "outputPath": "D:\\softuni\\Entity Framework Core\\XML Processing Lab\\XMLDemo\\XMLDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

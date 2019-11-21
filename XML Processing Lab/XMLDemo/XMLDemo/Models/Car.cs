@@ -7,5 +7,10 @@
         public string Model { get; set; }
 
         public long TravelledDistance { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Make} {this.Model}";
+        }
     }
 }

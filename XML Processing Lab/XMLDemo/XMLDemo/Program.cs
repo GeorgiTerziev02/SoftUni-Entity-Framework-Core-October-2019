@@ -16,6 +16,9 @@
 
             XElement root = document.Root;
             var cars = root.Elements();
+            //Console.WriteLine(root.Attribute("count").Value);
+            //root.SetAttributeValue("count", "220");
+            //Console.WriteLine(root.Attribute("count").Value);
 
             foreach (var car in cars)
             {
@@ -23,11 +26,15 @@
                 {
                     Make = car.Element("make").Value,
                     Model = car.Element("model").Value,
-                    TravelledDistance = long.Parse(car.Element("travelled-distance").ToString())
+                    TravelledDistance = long.Parse(car.Element("travelled-distance").Value.ToString())
                 };
 
-                Console.WriteLine($"{car.Element("make")} {car.Element("model").Value}");
+                //car.Element("make").Value = "BMW";
+
+                Console.WriteLine(carObject.ToString());
             }
+
+            document.Save("Data/car_modified.xml");
         }
     }
 }
