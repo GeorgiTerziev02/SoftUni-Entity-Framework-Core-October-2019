@@ -240,7 +240,28 @@
         {
             var sb = new StringBuilder();
 
+            var carsToExport = context
+                .Cars.OrderByDescending(c => c.TravelledDistance)
+                .ThenBy(c => c.Model)
+                .Take(5)
+                .ProjectTo<ExportCarWithItsPartsDTO>()
+                .ToArray();
 
+            //foreach (var car in carsToExport)
+            //{
+            //    car.Parts = car.Parts
+            //        .OrderByDescending(p => p.Price)
+            //        .ToArray();
+            //}
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ExportCarWithItsPartsDTO[]), new XmlRootAttribute("cars"));
+            var namespaces = new XmlSerializerNamespaces();
+            namespaces.Add(String.Empty, String.Empty);
+
+            using (var writter = new StringWriter(sb))
+            {
+                serializer.Serialize(writter, carsToExport, namespaces);
+            }
 
             return sb.ToString().TrimEnd();
         }
