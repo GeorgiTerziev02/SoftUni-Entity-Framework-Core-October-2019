@@ -1,0 +1,10 @@
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\bin\Debug\netcoreapp2.1\CarDealer.deps.json
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\bin\Debug\netcoreapp2.1\CarDealer.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\bin\Debug\netcoreapp2.1\CarDealer.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\bin\Debug\netcoreapp2.1\CarDealer.dll
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\bin\Debug\netcoreapp2.1\CarDealer.pdb
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\obj\Debug\netcoreapp2.1\CarDealer.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\obj\Debug\netcoreapp2.1\CarDealer.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\obj\Debug\netcoreapp2.1\CarDealer.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\obj\Debug\netcoreapp2.1\CarDealer.dll
+D:\softuni\Entity Framework Core\Exercise XML Processing\CarDealer - Skeleton\CarDealer\obj\Debug\netcoreapp2.1\CarDealer.pdb
