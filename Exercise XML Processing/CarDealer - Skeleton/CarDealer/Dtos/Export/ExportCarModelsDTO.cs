@@ -3,7 +3,7 @@
     using System.Xml.Serialization;
 
     [XmlType("car")]
-    public class ExportCarMakeBMWDTO
+    public class ExportCarModelsDTO
     {
         [XmlAttribute("id")]
         public int Id { get; set; }

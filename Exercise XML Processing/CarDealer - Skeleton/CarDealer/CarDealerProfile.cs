@@ -24,7 +24,7 @@
 
             this.CreateMap<Car, ExportCarWithDistanceDTO>();
 
-            this.CreateMap<Car, ExportCarMakeBMWDTO>();
+            this.CreateMap<Car, ExportCarModelsDTO>();
 
             this.CreateMap<Supplier, ExportLocalSupplierDTO>()
                 .ForMember(x => x.PartsCount, y => y.MapFrom(x => x.Parts.Count));
@@ -38,6 +38,8 @@
                 .ForMember(x => x.Parts, y => y.MapFrom(x => x.PartCars.Select(pc => pc.Part).OrderByDescending(p=>p.Price)));
 
             this.CreateMap<Part, ExportCarPartDTO>();
+
+            this.CreateMap<Car, ExportCarDTO>();
         }
     }
 }

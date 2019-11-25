@@ -25,9 +25,10 @@
             {
                 //var inputXML = File.ReadAllText("./../../../Datasets/sales.xml");
 
-                var result = GetCarsWithTheirListOfParts(db);
+                var result = GetSalesWithAppliedDiscount(db);
 
                 Console.WriteLine(result);
+
             }
         }
 
@@ -195,10 +196,10 @@
                 .Where(c => c.Make == "BMW")
                 .OrderBy(c => c.Model)
                 .ThenByDescending(c => c.TravelledDistance)
-                .ProjectTo<ExportCarMakeBMWDTO>()
+                .ProjectTo<ExportCarModelsDTO>()
                 .ToArray();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(ExportCarMakeBMWDTO[]), new XmlRootAttribute("cars"));
+            XmlSerializer serializer = new XmlSerializer(typeof(ExportCarModelsDTO[]), new XmlRootAttribute("cars"));
 
             var namespaces = new XmlSerializerNamespaces();
             namespaces.Add(String.Empty, String.Empty);
@@ -227,9 +228,9 @@
             var namespaces = new XmlSerializerNamespaces();
             namespaces.Add(String.Empty, String.Empty);
 
-            using (var writer= new StringWriter(sb))
+            using (var writer = new StringWriter(sb))
             {
-                serializer.Serialize(writer,supplierToExport,namespaces);
+                serializer.Serialize(writer, supplierToExport, namespaces);
             }
 
             return sb.ToString().TrimEnd();
@@ -285,6 +286,41 @@
             using (var writer = new StringWriter(sb))
             {
                 serializer.Serialize(writer, customersToExport, namespaces);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        //Problem 19
+        public static string GetSalesWithAppliedDiscount(CarDealerContext context)
+        {
+            var sales = context
+                .Sales
+                .Select(s => new ExportCarsWithAppliedDiscardDTO
+                {
+                    Car = new ExportCarDTO
+                    {
+                        Make = s.Car.Make,
+                        Model = s.Car.Model,
+                        TravelledDistance = s.Car.TravelledDistance
+                    },
+                    Discount = s.Discount,
+                    CustomerName = s.Customer.Name,
+                    Price = s.Car.PartCars.Sum(pc => pc.Part.Price),
+                    PriceWithDiscount = s.Car.PartCars.Sum(pc => pc.Part.Price)
+                    - s.Discount * (s.Car.PartCars.Sum(pc => pc.Part.Price)) / 100
+                })
+                .ToArray();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ExportCarsWithAppliedDiscardDTO[]), new XmlRootAttribute("sales"));
+            var namespaces = new XmlSerializerNamespaces();
+            namespaces.Add(string.Empty, string.Empty);
+
+            StringBuilder sb = new StringBuilder();
+
+            using (var writer = new StringWriter(sb))
+            {
+                serializer.Serialize(writer, sales, namespaces);
             }
 
             return sb.ToString().TrimEnd();
