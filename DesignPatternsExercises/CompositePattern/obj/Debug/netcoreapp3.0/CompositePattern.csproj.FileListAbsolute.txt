@@ -1,0 +1,11 @@
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.exe
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.deps.json
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.runtimeconfig.json
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.dll
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\bin\Debug\netcoreapp3.0\CompositePattern.pdb
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\obj\Debug\netcoreapp3.0\CompositePattern.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\obj\Debug\netcoreapp3.0\CompositePattern.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\obj\Debug\netcoreapp3.0\CompositePattern.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\obj\Debug\netcoreapp3.0\CompositePattern.dll
+D:\softuni\Entity Framework Core\DesignPatternsExercises\CompositePattern\obj\Debug\netcoreapp3.0\CompositePattern.pdb
