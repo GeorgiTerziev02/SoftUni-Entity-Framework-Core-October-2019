@@ -1,0 +1,8 @@
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\bin\Debug\netstandard2.1\PetStore.Data.Models.deps.json
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\bin\Debug\netstandard2.1\PetStore.Data.Models.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\obj\Debug\netstandard2.1\PetStore.Data.Models.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\obj\Debug\netstandard2.1\PetStore.Data.Models.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\obj\Debug\netstandard2.1\PetStore.Data.Models.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\bin\Debug\netstandard2.1\PetStore.Data.Models.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\obj\Debug\netstandard2.1\PetStore.Data.Models.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Data\PetStore.Data.Models\obj\Debug\netstandard2.1\PetStore.Data.Models.pdb
