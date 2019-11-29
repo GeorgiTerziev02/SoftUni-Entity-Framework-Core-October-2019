@@ -9,7 +9,8 @@
       "PetStore/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "3.0.1",
-          "PetStore.Data": "1.0.0"
+          "PetStore.Data": "1.0.0",
+          "PetStore.Services": "1.0.0"
         },
         "runtime": {
           "PetStore.dll": {}
@@ -841,6 +842,21 @@
         "runtime": {
           "PetStore.Data.Models.dll": {}
         }
+      },
+      "PetStore.Services/1.0.0": {
+        "dependencies": {
+          "PetStore.Data": "1.0.0",
+          "PetStore.Data.Models": "1.0.0",
+          "PetStore.Services.Models": "1.0.0"
+        },
+        "runtime": {
+          "PetStore.Services.dll": {}
+        }
+      },
+      "PetStore.Services.Models/1.0.0": {
+        "runtime": {
+          "PetStore.Services.Models.dll": {}
+        }
       }
     }
   },
@@ -1451,6 +1467,16 @@
       "sha512": ""
     },
     "PetStore.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PetStore.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PetStore.Services.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

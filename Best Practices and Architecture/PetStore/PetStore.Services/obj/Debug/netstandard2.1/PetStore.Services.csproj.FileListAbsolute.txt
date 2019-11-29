@@ -1,0 +1,15 @@
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Services.deps.json
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Services.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Services.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Data.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Data.Models.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Services.Models.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Data.Models.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Data.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\bin\Debug\netstandard2.1\PetStore.Services.Models.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.csproj.CopyComplete
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services\obj\Debug\netstandard2.1\PetStore.Services.pdb

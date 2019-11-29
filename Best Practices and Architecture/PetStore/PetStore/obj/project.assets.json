@@ -1272,6 +1272,31 @@
         "runtime": {
           "bin/placeholder/PetStore.Data.Models.dll": {}
         }
+      },
+      "PetStore.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "PetStore.Data": "1.0.0",
+          "PetStore.Data.Models": "1.0.0",
+          "PetStore.Services.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetStore.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetStore.Services.dll": {}
+        }
+      },
+      "PetStore.Services.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/PetStore.Services.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetStore.Services.Models.dll": {}
+        }
       }
     }
   },
@@ -4884,12 +4909,23 @@
       "type": "project",
       "path": "../Data/PetStore.Data.Models/PetStore.Data.Models.csproj",
       "msbuildProject": "../Data/PetStore.Data.Models/PetStore.Data.Models.csproj"
+    },
+    "PetStore.Services/1.0.0": {
+      "type": "project",
+      "path": "../PetStore.Services/PetStore.Services.csproj",
+      "msbuildProject": "../PetStore.Services/PetStore.Services.csproj"
+    },
+    "PetStore.Services.Models/1.0.0": {
+      "type": "project",
+      "path": "../PetStore.Services.Models/PetStore.Services.Models.csproj",
+      "msbuildProject": "../PetStore.Services.Models/PetStore.Services.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.EntityFrameworkCore.Design >= 3.0.1",
-      "PetStore.Data >= 1.0.0"
+      "PetStore.Data >= 1.0.0",
+      "PetStore.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4924,6 +4960,9 @@
           "projectReferences": {
             "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data\\PetStore.Data.csproj": {
               "projectPath": "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data\\PetStore.Data.csproj"
+            },
+            "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj": {
+              "projectPath": "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\PetStore.Services\\PetStore.Services.csproj"
             }
           }
         }

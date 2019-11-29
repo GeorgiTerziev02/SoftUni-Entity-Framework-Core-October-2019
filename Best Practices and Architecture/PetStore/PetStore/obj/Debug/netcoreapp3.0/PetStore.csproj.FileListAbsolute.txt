@@ -44,3 +44,7 @@ D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetSto
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Data.Models.dll
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Data.pdb
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Data.Models.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Services.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Services.Models.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Services.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore\bin\Debug\netcoreapp3.0\PetStore.Services.Models.pdb
