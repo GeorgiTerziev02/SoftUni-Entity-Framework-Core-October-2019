@@ -14,9 +14,7 @@
         {
             this.CreateMap<ImportWriterDTO, Writer>();
 
-            this.CreateMap<ImportAlbumDTO, Album>()
-                .ForMember(x => x.ReleaseDate,
-                           y => y.MapFrom(x => DateTime.ParseExact(x.ReleaseDate, @"dd/MM/yyyy", CultureInfo.InvariantCulture)));
+            this.CreateMap<ImportAlbumDTO, Album>();
 
             this.CreateMap<ImportProducerDTO, Producer>();
 
@@ -24,6 +22,10 @@
                 .ForMember(x => x.CreatedOn, y => y.MapFrom(x => DateTime.ParseExact(x.CreatedOn, "dd/MM/yyyy", CultureInfo.InvariantCulture)))
                 .ForMember(x => x.Duration, y => y.MapFrom(x => TimeSpan.ParseExact(x.Duration, "c", CultureInfo.InvariantCulture)))
                 .ForMember(x => x.Genre, y => y.MapFrom(x => Enum.Parse(typeof(Genre), x.Genre)));
+
+            this.CreateMap<ImportPerformer, Performer>();
+            this.CreateMap<ImportSongPerformerDTO, SongPerformer>()
+                .ForMember(t => t.SongId, y => y.MapFrom(x => x.Id));
         }
     }
 }

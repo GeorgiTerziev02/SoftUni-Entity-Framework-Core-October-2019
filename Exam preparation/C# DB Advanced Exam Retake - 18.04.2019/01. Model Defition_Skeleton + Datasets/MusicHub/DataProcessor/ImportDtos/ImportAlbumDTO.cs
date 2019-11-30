@@ -1,13 +1,15 @@
 ﻿namespace MusicHub.DataProcessor.ImportDtos
 {
     using Newtonsoft.Json;
+    using System.ComponentModel.DataAnnotations;
 
     public class ImportAlbumDTO
-    { 
-        [JsonProperty("Name")]
+    {
+        [Required]
+        [MinLength(3), MaxLength(40)]
         public string Name { get; set; }
 
-        [JsonProperty("ReleaseDate")]
+        [Required]
         public string ReleaseDate { get; set; }
     }
 }

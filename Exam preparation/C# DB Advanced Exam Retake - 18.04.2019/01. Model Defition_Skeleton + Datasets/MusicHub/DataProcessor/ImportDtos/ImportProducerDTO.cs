@@ -2,19 +2,19 @@
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class ImportProducerDTO
     {
-        [JsonProperty("Name")]
+        [MaxLength(30), MinLength(3), Required]
         public string Name { get; set; }
 
-        [JsonProperty("Pseudonym")]
+        [RegularExpression(@"[A-Z]{1}[a-z]+[ ][A-Z]{1}[a-z]+$")]
         public string Pseudonym { get; set; }
 
-        [JsonProperty("PhoneNumber")]
+        [RegularExpression(@"[+]{1}[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}[ ][0-9]{3}$")]
         public string PhoneNumber { get; set; }
 
-        [JsonProperty("Albums")]
         public List<ImportAlbumDTO> Albums { get; set; }
     }
 }
