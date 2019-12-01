@@ -1,17 +1,21 @@
 ﻿namespace MusicHub.DataProcessor
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     using System.IO;
     using System.Linq;
     using System.Text;
+    using System.Globalization;
     using System.Xml.Serialization;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     using AutoMapper;
+
     using Data;
     using MusicHub.Data.Models;
     using MusicHub.Data.Models.Enums;
     using MusicHub.DataProcessor.ImportDtos;
+
     using Newtonsoft.Json;
 
     public class Deserializer
@@ -67,25 +71,38 @@
             StringBuilder sb = new StringBuilder();
 
             var producers = new List<Producer>();
+            var albums = new List<Album>();
 
             foreach (var producerDto in producerDtos)
             {
-                if (!IsValid(producerDto) || !producerDto.Albums.All(IsValid))
-                {
-                    sb.AppendLine(ErrorMessage);
-                    continue;
-                }
+                var isValidProducer = IsValid(producerDto);
 
-                var producer = Mapper.Map<Producer>(producerDto);
-
-                var isValidProducer = IsValid(producer);
-
-                var areAllAlbumsValid = producer.Albums.All(a => IsValid(a));
+                var areAllAlbumsValid = producerDto.Albums.All(a => IsValid(a));
 
                 if (areAllAlbumsValid == false || isValidProducer == false)
                 {
                     sb.AppendLine(ErrorMessage);
                     continue;
+                }
+
+                var producer = new Producer
+                {
+                    Name = producerDto.Name,
+                    PhoneNumber = producerDto.PhoneNumber,
+                    Pseudonym = producerDto.Pseudonym
+                };
+
+                foreach (var albumDto in producerDto.Albums)
+                {
+                    var album = new Album
+                    {
+                        Name = albumDto.Name,
+                        ReleaseDate = DateTime.ParseExact(albumDto.ReleaseDate, @"dd/MM/yyyy", CultureInfo.InvariantCulture),
+                        Producer = producer
+                    };
+
+                    producer.Albums.Add(album);
+                    albums.Add(album);
                 }
 
                 producers.Add(producer);
@@ -101,6 +118,7 @@
             }
 
             context.Producers.AddRange(producers);
+            context.Albums.AddRange(albums);
             context.SaveChanges();
 
             return sb.ToString().TrimEnd();
@@ -169,15 +187,45 @@
 
             foreach (var performerDto in performerDtos)
             {
-
                 if (IsValid(performerDto) == false)
                 {
                     sb.AppendLine(ErrorMessage);
                     continue;
                 }
 
-                sb.AppendLine("-");
+                var validSongsCount = context.Songs.Count(s => performerDto.PerformersSongsIds.Any(i => i.Id == s.Id));
+
+                if (validSongsCount != performerDto.PerformersSongsIds.Count)
+                {
+                    sb.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var performer = new Performer()
+                {
+                    Age = performerDto.Age,
+                    FirstName = performerDto.FirstName,
+                    LastName = performerDto.LastName,
+                    NetWorth = performerDto.NetWorth
+                };
+
+                foreach (var song in performerDto.PerformersSongsIds)
+                {
+                    var perfomerSong = new SongPerformer()
+                    {
+                        Performer = performer,
+                        SongId = song.Id
+                    };
+
+                    performer.PerformerSongs.Add(perfomerSong);
+                }
+
+                validPerformers.Add(performer);
+                sb.AppendLine(string.Format(SuccessfullyImportedPerformer, performer.FirstName, performer.PerformerSongs.Count));
             }
+
+            context.Performers.AddRange(validPerformers);
+            context.SaveChanges();
 
             return sb.ToString().TrimEnd();
         }
