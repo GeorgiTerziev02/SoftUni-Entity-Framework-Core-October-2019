@@ -1,0 +1,10 @@
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.deps.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.dll
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\bin\Debug\netcoreapp2.1\Cinema.pdb
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.dll
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Exam - 07.04.2019\01. Model Definition _Skeleton + Datasets\Cinema\Cinema\obj\Debug\netcoreapp2.1\Cinema.pdb
