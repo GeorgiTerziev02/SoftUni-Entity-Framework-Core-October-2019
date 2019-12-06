@@ -44,7 +44,7 @@
 
         private static void ExportEntities(PetClinicContext context)
         {
-            const string exportDir = "./Results/";
+            const string exportDir = "./../../../Results/";
 
             string animalsExport = DataProcessor.Serializer.ExportAnimalsByOwnerPhoneNumber(context, "0887446123");
             PrintAndExportEntityToFile(animalsExport, exportDir + "AnimalsExport.json");

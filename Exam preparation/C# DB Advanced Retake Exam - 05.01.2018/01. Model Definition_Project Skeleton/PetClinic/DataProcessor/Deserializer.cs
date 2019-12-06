@@ -51,7 +51,45 @@
 
         public static string ImportAnimals(PetClinicContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            var animalDtos = JsonConvert.DeserializeObject<List<ImportAnimalDTO>>(jsonString);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var animalDto in animalDtos)
+            {
+                bool isNumberUser = context.Passports.Any(p => p.SerialNumber == animalDto.Passport.SerialNumber);
+
+                if (IsValid(animalDto) == false || isNumberUser == true || IsValid(animalDto.Passport) == false)
+                {
+                    sb.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var animal = new Animal()
+                {
+                    Age = animalDto.Age,
+                    Name = animalDto.Name,
+                    Type = animalDto.Type
+                };
+
+                var passport = new Passport()
+                {
+                    SerialNumber = animalDto.Passport.SerialNumber,
+                    OwnerName = animalDto.Passport.OwnerName,
+                    OwnerPhoneNumber = animalDto.Passport.OwnerPhoneNumber,
+                    RegistrationDate = DateTime.Parse(animalDto.Passport.RegistrationDate),
+                    Animal = animal
+                };
+
+                animal.Passport = passport;
+
+                context.Animals.Add(animal);
+                context.SaveChanges();
+
+                sb.AppendLine($"Record {animal.Name} Passport №: {passport.SerialNumber} successfully imported.");
+            }
+
+            return sb.ToString().TrimEnd();
         }
 
         public static string ImportVets(PetClinicContext context, string xmlString)
@@ -96,7 +134,58 @@
 
         public static string ImportProcedures(PetClinicContext context, string xmlString)
         {
-            throw new NotImplementedException();
+            var serializer = new XmlSerializer(typeof(List<ImportProcedureDTO>), new XmlRootAttribute("Procedures"));
+
+            List<ImportProcedureDTO> procedureDTOs;
+
+            using (var reader = new StringReader(xmlString))
+            {
+                procedureDTOs = (List<ImportProcedureDTO>)serializer.Deserialize(reader);
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var dto in procedureDTOs)
+            {
+                bool vetExist = context.Vets.Any(v => v.Name == dto.VetName);
+                bool animalExist = context.Animals.Any(a => a.SerialNumber == dto.AnimalSerialNumber);
+                bool aidExist = dto.AnimalAids.All(aa => context.AnimalAids.Any(x => aa.Name == x.Name));
+
+                var aidsCount = dto.AnimalAids.Select(x=>x.Name).Count();
+                var aidsCountAfterDistict = dto.AnimalAids.Select(x => x.Name).Distinct().Count();
+
+                if (IsValid(dto) == false || vetExist == false
+                    || animalExist == false || aidExist == false || aidsCount != aidsCountAfterDistict)
+                {
+                    sb.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var procedure = new Procedure()
+                {
+                    Animal = context.Animals.FirstOrDefault(a => a.SerialNumber == dto.AnimalSerialNumber),
+                    DateTime = DateTime.Parse(dto.DateTime),
+                    Vet = context.Vets.First(v => v.Name == dto.VetName)
+                };
+
+                foreach (var animalAid in dto.AnimalAids)
+                {
+                    var animalAidProcedure = new ProcedureAnimalAid()
+                    {
+                        Procedure = procedure,
+                        AnimalAid = context.AnimalAids.First(aa => aa.Name == animalAid.Name)
+                    };
+
+                    procedure.ProcedureAnimalAids.Add(animalAidProcedure);
+                }
+
+                context.Procedures.Add(procedure);
+                context.SaveChanges();
+
+                sb.AppendLine($"Record successfully imported.");
+            }
+
+            return sb.ToString().TrimEnd();
         }
 
         public static bool IsValid(object obj)

@@ -8,8 +8,6 @@
         [RegularExpression("^[A-z]{7}[0-9]{3}$")]
         public string SerialNumber { get; set; }
 
-        public int AnimalId { get; set; }
-
         [Required]
         public Animal Animal { get; set; }
 

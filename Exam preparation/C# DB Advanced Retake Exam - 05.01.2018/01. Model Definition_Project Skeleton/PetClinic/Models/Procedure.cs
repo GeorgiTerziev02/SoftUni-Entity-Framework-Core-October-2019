@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
 
     public class Procedure
     {
@@ -23,7 +24,7 @@
         public ICollection<ProcedureAnimalAid> ProcedureAnimalAids { get; set; } = new HashSet<ProcedureAnimalAid>();
 
         [NotMapped]
-        public decimal Cost { get; set; }
+        public decimal Cost => ProcedureAnimalAids.Sum(paa => paa.AnimalAid.Price);
 
         [Required]
         public DateTime DateTime { get; set; }
