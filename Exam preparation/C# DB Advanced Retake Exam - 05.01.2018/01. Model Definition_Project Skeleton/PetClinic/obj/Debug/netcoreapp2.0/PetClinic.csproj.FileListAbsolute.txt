@@ -1,0 +1,10 @@
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\bin\Debug\netcoreapp2.0\PetClinic.deps.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\bin\Debug\netcoreapp2.0\PetClinic.runtimeconfig.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\bin\Debug\netcoreapp2.0\PetClinic.runtimeconfig.dev.json
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\bin\Debug\netcoreapp2.0\PetClinic.dll
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\bin\Debug\netcoreapp2.0\PetClinic.pdb
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\obj\Debug\netcoreapp2.0\PetClinic.csprojAssemblyReference.cache
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\obj\Debug\netcoreapp2.0\PetClinic.AssemblyInfoInputs.cache
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\obj\Debug\netcoreapp2.0\PetClinic.AssemblyInfo.cs
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\obj\Debug\netcoreapp2.0\PetClinic.dll
+D:\softuni\Entity Framework Core\Exam preparation\C# DB Advanced Retake Exam - 05.01.2018\01. Model Definition_Project Skeleton\PetClinic\obj\Debug\netcoreapp2.0\PetClinic.pdb
