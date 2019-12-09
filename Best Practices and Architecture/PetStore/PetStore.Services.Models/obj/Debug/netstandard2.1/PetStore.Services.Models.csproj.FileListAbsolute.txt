@@ -5,3 +5,4 @@ D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetSto
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services.Models\obj\Debug\netstandard2.1\PetStore.Services.Models.AssemblyInfo.cs
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services.Models\obj\Debug\netstandard2.1\PetStore.Services.Models.dll
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services.Models\obj\Debug\netstandard2.1\PetStore.Services.Models.pdb
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\PetStore.Services.Models\obj\Debug\netstandard2.1\PetStore.Services.Models.csprojAssemblyReference.cache
