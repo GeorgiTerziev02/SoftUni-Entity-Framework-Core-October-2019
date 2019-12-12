@@ -1,18 +1,14 @@
-﻿namespace PetStore.Services.Models.Food
+﻿namespace PetStore.Services.Models.Toy
 {
-    using System;
-
-    public class AddingFoodServiceModel
+    public class AddingToyServiceModel
     {
         public string Name { get; set; }
 
-        public double Weight { get; set; }
+        public string Description { get; set; }
 
         public decimal Price { get; set; }
 
         public double Profit { get; set; }
-
-        public DateTime ExpirationDate { get; set; }
 
         public int BrandId { get; set; }
 

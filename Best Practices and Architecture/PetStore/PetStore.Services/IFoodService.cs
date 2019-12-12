@@ -7,8 +7,12 @@
     public interface IFoodService
     {
         void BuyFromDistributor(string name, double weight, decimal price, double profit,
-            DateTime expirationDate, string brandName, string categoryName);
+            DateTime expirationDate, int brandId, int categoryIdu);
 
         void BuyFromDistributor(AddingFoodServiceModel model);
+
+        void SellFoodToUser(int foodId, int userId);
+
+        bool Exists(int foodId);
     }
 }

@@ -110,7 +110,7 @@ namespace PetStore.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Foods");
+                    b.ToTable("Food");
                 });
 
             modelBuilder.Entity("PetStore.Data.Models.FoodOrder", b =>

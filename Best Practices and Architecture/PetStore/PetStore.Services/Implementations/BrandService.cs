@@ -24,7 +24,7 @@
                 throw new InvalidOperationException($"Brand name cannot be more than {DataValidation.NameMaxLength} characters.");
             }
 
-            if (this.data.Brands.Any(br=>br.Name == name))
+            if (this.data.Brands.Any(br => br.Name == name))
             {
                 throw new InvalidOperationException($"Brand name {name} already exists.");
             }
@@ -49,7 +49,7 @@
                         .Select(br => new BrandWithToysServiceModel
                         {
                             Name = br.Name,
-                            Toys = br.Toys.Select(t=> new ToyListingServiceModel
+                            Toys = br.Toys.Select(t => new ToyListingServiceModel
                             {
                                 Id = t.Id,
                                 Name = t.Name,
@@ -64,9 +64,9 @@
         {
             var brands = this.data
                 .Brands
-                .Where(b=>b.Name.ToLower().Contains(name.ToLower()))
-                .Select(b=> new BrandListingServiceModel
-                { 
+                .Where(b => b.Name.ToLower().Contains(name.ToLower()))
+                .Select(b => new BrandListingServiceModel
+                {
                     Id = b.Id,
                     Name = b.Name
                 })

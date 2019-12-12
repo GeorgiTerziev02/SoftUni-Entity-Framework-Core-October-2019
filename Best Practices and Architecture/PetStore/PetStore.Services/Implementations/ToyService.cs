@@ -2,24 +2,23 @@
 {
     using System;
     using System.Linq;
-    using Data.Models;
-    using Microsoft.EntityFrameworkCore.Internal;
     using PetStore.Data;
-    using Services.Models.Food;
+    using PetStore.Data.Models;
+    using PetStore.Services;
+    using PetStore.Services.Models.Toy;
 
-    public class FoodService : IFoodService
+    public class ToyService : IToyService
     {
         private readonly PetStoreDbContext data;
         private readonly IUserService userService;
 
-        public FoodService(PetStoreDbContext data, IUserService userService)
+        public ToyService(PetStoreDbContext data, IUserService userService)
         {
             this.data = data;
             this.userService = userService;
         }
 
-        public void BuyFromDistributor(string name, double weight, decimal price, double profit, DateTime expirationDate,
-            int brandId, int categoryId)
+        public void BuyFromDistributor(string name, string description, decimal distributorPrice, double profit, int brandId, int categoryId)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -32,22 +31,21 @@
                 throw new ArgumentException("Profit must be higher than zero and lower than 500%");
             }
 
-            var food = new Food()
+            var toy = new Toy()
             {
                 Name = name,
-                Weight = weight,
-                DistributorPrice = price,
-                Price = price + (price * (decimal)profit),
-                ExpirationDate = expirationDate,
+                Description = description,
+                DistributorPrice = distributorPrice,
+                Price = distributorPrice + (distributorPrice * (decimal)profit),
                 BrandId = brandId,
                 CategoryId = categoryId
             };
 
-            this.data.Food.Add(food);
-            this.data.SaveChanges();
+            data.Toys.Add(toy);
+            data.SaveChanges();
         }
 
-        public void BuyFromDistributor(AddingFoodServiceModel model)
+        public void BuyFromDistributor(AddingToyServiceModel model)
         {
             if (string.IsNullOrWhiteSpace(model.Name))
             {
@@ -60,31 +58,30 @@
                 throw new ArgumentException("Profit must be higher than zero and lower than 500%");
             }
 
-            var food = new Food()
+            var toy = new Toy()
             {
                 Name = model.Name,
-                Weight = model.Weight,
+                Description = model.Description,
                 DistributorPrice = model.Price,
                 Price = model.Price + (model.Price * (decimal)model.Profit),
-                ExpirationDate = model.ExpirationDate,
                 BrandId = model.BrandId,
                 CategoryId = model.CategoryId
             };
 
-            this.data.Food.Add(food);
-            this.data.SaveChanges();
+            data.Toys.Add(toy);
+            data.SaveChanges();
         }
 
-        public void SellFoodToUser(int foodId, int userId)
+        public void SellToyToUser(int toyId, int userId)
         {
-            if (!this.Exists(foodId))
+            if (!this.Exists(toyId))
             {
-                throw new ArgumentException("There is no such food with given id in the database!");
+                throw new ArgumentException("There is no such toy with the given id in the databasse!");
             }
 
             if (!this.userService.Exists(userId))
             {
-                throw new ArgumentException("There is no such user with the given id in the database!");
+                throw new ArgumentException("There is no such user with the given id int the database!");
             }
 
             var order = new Order()
@@ -94,20 +91,24 @@
                 UserId = userId
             };
 
-            var foodOrder = new FoodOrder()
+            var toyOrder = new ToyOrder()
             {
                 Order = order,
-                FoodId = foodId
+                ToyId = toyId
             };
 
             this.data.Orders.Add(order);
-            this.data.FoodOrders.Add(foodOrder);
+            this.data.ToyOrders.Add(toyOrder);
+
             this.data.SaveChanges();
         }
 
-        public bool Exists(int foodId)
+
+        public bool Exists(int toyId)
         {
-            return this.data.Food.Any(f => f.Id == foodId);
+            return this.data
+                .Toys
+                .Any(t => t.Id == toyId);
         }
     }
 }
