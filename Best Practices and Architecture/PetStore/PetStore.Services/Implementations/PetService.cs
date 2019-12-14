@@ -1,9 +1,11 @@
 ﻿namespace PetStore.Services.Implementations
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using PetStore.Data;
     using PetStore.Data.Models;
+    using PetStore.Services.Models.Pet;
 
     public class PetService : IPetService
     {
@@ -83,5 +85,17 @@
         {
             return this.data.Pets.Any(p => p.Id == petId);
         }
+
+        public IEnumerable<PetListingServiceModel> All()
+            => this.data
+                .Pets
+                .Select(p => new PetListingServiceModel
+                {
+                    Id = p.Id,
+                    Category = p.Category.Name,
+                    Price = p.Price,
+                    Breed = p.Breed.Name
+                })
+                .ToList();
     }
 }
