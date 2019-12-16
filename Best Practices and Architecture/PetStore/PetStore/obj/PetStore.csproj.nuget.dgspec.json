@@ -171,7 +171,11 @@
         },
         "frameworks": {
           "netstandard2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

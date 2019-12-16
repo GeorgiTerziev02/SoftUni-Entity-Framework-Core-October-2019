@@ -1,0 +1,53 @@
+﻿@model AllPetsViewModel
+
+<h1>All Pets</h1>
+
+<div>
+    @if (!Model.PreviousDisabled)
+    {
+        <a href="/Pets/All?page=@Model.PreviousPage" class="float-left btn btn-info @(Model.PreviousDisabled ? "disabled" : string.Empty)">Previous</a>
+    }
+    @if (!Model.NextDisabled)
+    {
+        <a href="/Pets/All?page=@Model.NextPage" class="float-right btn btn-info @(Model.NextDisabled ? "disabled" : string.Empty)">Next</a>
+    }
+</div>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Type
+        </th>
+        <th>
+            Breed
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    @foreach (var pet in Model.Pets)
+    {
+        <tr>
+            <td>
+                (@pet.Id)@pet.Category
+            </td>
+            <td>
+                @pet.Breed
+            </td>
+            <td>
+                $@pet.Price
+            </td>
+            <td class="text-center" >
+                <a href ="/Pets/Delete/@pet.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+

@@ -26,8 +26,22 @@ using PetStore.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\Views\_ViewImports.cshtml"
+using PetStore.Services.Models.Pet;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\Views\_ViewImports.cshtml"
+using PetStore.Web.Models.Pet;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5a54b9246d7bd86a5ad2038407143fa3abb6454f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0a8723c0b564c9f7321aaa2db3ebe4ab4872884e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

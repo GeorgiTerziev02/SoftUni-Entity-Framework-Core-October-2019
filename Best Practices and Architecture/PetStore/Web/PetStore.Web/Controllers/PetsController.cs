@@ -2,8 +2,7 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using PetStore.Services;
-    using PetStore.Services.Models.Pet;
-    using System.Collections.Generic;
+    using Models.Pet;
 
     public class PetsController : Controller
     {
@@ -13,7 +12,43 @@
             => this.pets = pets;
 
         //pets/all
-        public IEnumerable<PetListingServiceModel> All()
-            => this.pets.All();
+        public IActionResult All(int page = 1)
+        {
+            var allPets = this.pets.All(page);
+            var totalPets = this.pets.Total();
+
+            var model = new AllPetsViewModel
+            {
+                Pets = allPets,
+                Total = totalPets,
+                CurrentPage = page
+            };
+
+            return View(model);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var pet = this.pets.Details(id);
+
+            if (pet == null)
+            {
+                return this.NotFound();
+            }
+
+            return View(pet);
+        }
+
+        public IActionResult ConfirmDelete(int id)
+        {
+            var deleted = this.pets.Delete(id);
+
+            if (!deleted)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction(nameof(All));
+        }
     }
 }

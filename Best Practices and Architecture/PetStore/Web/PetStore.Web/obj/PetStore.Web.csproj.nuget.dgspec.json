@@ -171,7 +171,11 @@
         },
         "frameworks": {
           "netstandard2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data.Models\\PetStore.Data.Models.csproj": {
+                "projectPath": "D:\\softuni\\Entity Framework Core\\Best Practices and Architecture\\PetStore\\Data\\PetStore.Data.Models\\PetStore.Data.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -309,6 +313,16 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

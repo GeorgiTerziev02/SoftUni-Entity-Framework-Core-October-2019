@@ -9,6 +9,8 @@
 
     public class PetService : IPetService
     {
+        private const int PetsPageSize = 25;
+
         private readonly PetStoreDbContext data;
         private readonly IBreedService breedService;
         private readonly ICategoryService categoryService;
@@ -79,16 +81,18 @@
             pet.Order = order;
 
             this.data.SaveChanges();
-            
+
         }
         public bool Exists(int petId)
         {
             return this.data.Pets.Any(p => p.Id == petId);
         }
 
-        public IEnumerable<PetListingServiceModel> All()
+        public IEnumerable<PetListingServiceModel> All(int page = 1)
             => this.data
                 .Pets
+                .Skip((page - 1) * PetsPageSize)
+                .Take(PetsPageSize)
                 .Select(p => new PetListingServiceModel
                 {
                     Id = p.Id,
@@ -97,5 +101,38 @@
                     Breed = p.Breed.Name
                 })
                 .ToList();
+
+        public int Total() => this.data.Pets.Count();
+
+        public PetDetailsServiceModel Details(int id)
+            => this.data
+                .Pets
+                .Where(p => p.Id == id)
+                .Select(p => new PetDetailsServiceModel
+                {
+                    Id = p.Id,
+                    Breed = p.Breed.Name,
+                    Category = p.Category.Name,
+                    DateOfBirth = p.DateOfBirth,
+                    Gender = p.Gender,
+                    Price = p.Price,
+                    Description = p.Description
+                })
+                .FirstOrDefault();
+
+        public bool Delete(int id)
+        {
+            var pet = this.data.Pets.Find(id);
+
+            if (pet == null)
+            {
+                return false;
+            }
+
+            this.data.Pets.Remove(pet);
+            this.data.SaveChanges();
+
+            return true;
+        }
     }
 }
