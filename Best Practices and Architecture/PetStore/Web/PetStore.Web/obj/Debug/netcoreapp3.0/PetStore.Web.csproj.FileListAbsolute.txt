@@ -141,6 +141,10 @@ D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\Pe
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\PetStore.Web.MvcApplicationPartsAssemblyInfo.cache
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Pets\All.cshtml.g.cs
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Pets\Delete.cshtml.g.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\All.cshtml.g.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\PetStore.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Create.cshtml.g.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Details.cshtml.g.cs
