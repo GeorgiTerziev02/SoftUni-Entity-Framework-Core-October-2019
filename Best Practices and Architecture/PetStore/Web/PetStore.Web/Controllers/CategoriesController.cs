@@ -40,19 +40,6 @@
             return this.RedirectToAction("All", "Categories");
         }
 
-        public IActionResult All()
-        {
-            var categories = categoryService.All()
-                .Select(csm => new CategoryListingViewModel()
-                {
-                    Id = csm.Id,
-                    Name = csm.Name
-                })
-                .ToArray();
-
-            return View(categories);
-        }
-
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -65,6 +52,7 @@
 
             CategoryDetailsViewModel viewModel = new CategoryDetailsViewModel()
             {
+                Id = category.Id.Value,
                 Name = category.Name,
                 Description = category.Description
             };
@@ -75,6 +63,50 @@
             }
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var category = this.categoryService.GetById(id);
+
+            if (category.Name == null)
+            {
+                return this.BadRequest();
+            }
+
+            var viewModel = new CategoryDetailsViewModel()
+            {
+                Id = category.Id.Value,
+                Name = category.Name,
+                Description = category.Description
+            };
+
+            if (viewModel.Description == null)
+            {
+                viewModel.Description = "No description.";
+            }
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit()
+        {
+            return null;
+        }
+
+        public IActionResult All()
+        {
+            var categories = categoryService.All()
+                .Select(csm => new CategoryListingViewModel()
+                {
+                    Id = csm.Id,
+                    Name = csm.Name
+                })
+                .ToArray();
+
+            return View(categories);
         }
     }
 }

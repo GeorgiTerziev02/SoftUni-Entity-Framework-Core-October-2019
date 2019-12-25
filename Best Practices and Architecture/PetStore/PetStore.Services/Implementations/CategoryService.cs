@@ -23,6 +23,7 @@
 
             var model = new DetailsCategoryServiceModel()
             { 
+                Id = category?.Id,
                 Name = category?.Name,
                 Description = category?.Description
             };
