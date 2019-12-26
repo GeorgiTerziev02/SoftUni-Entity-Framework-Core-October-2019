@@ -149,3 +149,4 @@ D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\Pe
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Create.cshtml.g.cs
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Details.cshtml.g.cs
 D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Edit.cshtml.g.cs
+D:\softuni\Entity Framework Core\Best Practices and Architecture\PetStore\Web\PetStore.Web\obj\Debug\netcoreapp3.0\Razor\Views\Categories\Delete.cshtml.g.cs

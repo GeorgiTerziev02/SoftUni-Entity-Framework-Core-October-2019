@@ -43,6 +43,16 @@
             this.data.SaveChanges();
         }
 
+        public void Edit(EditCategoryServiceModel model)
+        {
+            var category = this.data.Categories.Find(model.Id);
+
+            category.Name = model.Name;
+            category.Description = model.Description;
+
+            this.data.SaveChanges();
+        }
+
         public bool Exists(int categoryId)
         {
             return this.data.Categories.Any(c => c.Id == categoryId);
@@ -59,6 +69,28 @@
                     Description = c.Description
                 })
                 .ToArray();
+        }
+
+        public bool Delete(int id)
+        {
+            var category = this.data
+                .Categories
+                .Find(id);
+
+            if (category == null)
+            {
+                return false;
+            }
+
+            this.data.Categories.Remove(category);
+            int deletedEntitiesCount = this.data.SaveChanges();
+
+            if (deletedEntitiesCount == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

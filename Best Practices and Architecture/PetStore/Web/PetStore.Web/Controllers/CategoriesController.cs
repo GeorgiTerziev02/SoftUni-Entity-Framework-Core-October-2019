@@ -91,9 +91,66 @@
         }
 
         [HttpPost]
-        public IActionResult Edit()
+        public IActionResult Edit(CategoryEditInputModel model)
         {
-            return null;
+            if (this.categoryService.Exists(model.Id) == false)
+            {
+                return this.BadRequest();
+            }
+
+            if (ModelState.IsValid == false)
+            {
+                return this.RedirectToAction("Error", "Home");
+            }
+
+            var ecsm = new EditCategoryServiceModel()
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Description = model.Description
+            };
+
+            this.categoryService.Edit(ecsm);
+
+            return this.RedirectToAction("Details", "Categories", new { id = ecsm.Id });
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var category = this.categoryService.GetById(id);
+
+            if (category.Name ==null)
+            {
+                return BadRequest();
+            }
+
+            if (category.Description == null)
+            {
+                category.Description = "No description";
+            }
+
+            var cdvm = new CategoryDetailsViewModel()
+            {
+                Id = category.Id.Value,
+                Name = category.Name,
+                Description = category.Description
+            };
+
+            return View(cdvm);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(CategoryDetailsViewModel model)
+        {
+            bool success = this.categoryService.Delete(model.Id);
+
+            if (success == false)
+            {
+                return this.RedirectToAction("Error", "Home");
+            }
+
+            return this.RedirectToAction("All", "Categories");
         }
 
         public IActionResult All()

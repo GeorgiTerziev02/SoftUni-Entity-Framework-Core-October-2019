@@ -9,6 +9,10 @@
 
         void Create(CreateCategoryServiceModel model);
 
+        void Edit(EditCategoryServiceModel model);
+
+        bool Delete(int id);
+
         bool Exists(int categoryId);
 
         IEnumerable<CategoryListingServiceModel> All();
